@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://dbNewUser:dbNewUser1234@cluster0.0vtre.mongodb.net/Task_manager_Database?retryWrites=true&w=majority',{
-    // useNewUrlParser: true,
-    // useCreateIndex: true
+mongoose.connect(process.env.MONGODB_URL,{
+     useNewUrlParser: true,
+     useUnifiedTopology:true,
+    useCreateIndex: true
 })
 
 

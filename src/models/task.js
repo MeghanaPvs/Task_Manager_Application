@@ -6,7 +6,8 @@ mongoose.connect('mongodb+srv://dbNewUser:dbNewUser1234@cluster0.0vtre.mongodb.n
     // useCreateIndex: true
 })
 
-const Task = mongoose.model('Task',{ //passing name for the model
+
+const taskSchema = mongoose.Schema({ 
     description:{
         type:String,
         required:true,
@@ -15,7 +16,16 @@ const Task = mongoose.model('Task',{ //passing name for the model
     completed:{
         type:Boolean,
         default:false
-    }
+    },
+    owner:{ //whenever a task s been created then owner must be created
+        type:mongoose.Schema.Types. ObjectId,  //type is objectID
+        required:true,
+        ref:'User'  //reference : 'User'=> User is the model name of user from model.js ->user.js file
+
+    },
+}, {
+ timestamps:true
+        
 })
 
 //Instance
@@ -25,4 +35,8 @@ const Task = mongoose.model('Task',{ //passing name for the model
 //     completed:true
 // })
 
+const Task = mongoose.model('Task',taskSchema)
+
 module.exports = Task;
+
+

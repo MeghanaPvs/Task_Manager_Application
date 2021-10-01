@@ -13,3 +13,4 @@ mongodb.js
 
 /src/index-initial.js
 /src/db/mongose.js
+/config/dev.env
