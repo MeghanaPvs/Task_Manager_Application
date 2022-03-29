@@ -10,7 +10,7 @@ const sendWelcomeEmail =(email,name)=>{
         service: 'gmail',
         auth: {
           user: 'pvsmeghanait@gmail.com',
-          pass: 'VShiv%100'
+          pass: '*********'
         }
       });
 
@@ -39,7 +39,7 @@ const sendCancelationEmail =(email,name)=>{
         service: 'gmail',
         auth: {
           user: 'pvsmeghanait@gmail.com',
-          pass: 'VShiv%100'
+          pass: '*********'
         }
       });
 
